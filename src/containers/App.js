@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import Home from "../components/Home";
 import Actors from "../components/Actors";
@@ -11,18 +11,20 @@ const App = props => {
     <Router>
       <div>
         <NavBar />
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/movies">
-          <Movies />
-        </Route>
-        <Route exact path="/directors">
-          <Directors />
-        </Route>
-        <Route exact path="/actors">
-          <Actors />
-        </Route>
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/movies">
+            <Movies />
+          </Route>
+          <Route exact path="/directors">
+            <Directors />
+          </Route>
+          <Route exact path="/actors">
+            <Actors />
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
